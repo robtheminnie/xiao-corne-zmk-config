@@ -1,0 +1,23 @@
+/ {
+    chosen {
+        zmk,keyboard = &kscan0;
+    };
+};
+
+/* Disable the keyboard matrix (dongle has no keys) */
+&kscan0 {
+    status = "disabled";
+};
+
+/* Enable USB HID for dongle mode */
+&usbd {
+    status = "okay";
+};
+
+/* Optional: If your dongle has an OLED, SPI device, or GPIO pin, define it here */
+/*
+&spi1 {
+    status = "okay";
+    cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
+};
+*/

@@ -1,23 +1,19 @@
 / {
     chosen {
-        zmk,keyboard = &kscan0;
+        /* Tell ZMK there is no physical keyboard matrix */
+        zmk,keyboard = &empty_kscan;
     };
 };
 
-/* Disable the keyboard matrix (dongle has no keys) */
-&kscan0 {
-    status = "disabled";
+/ {
+    /* Define a fake kscan device so ZMK doesn’t complain */
+    empty_kscan: kscan {
+        compatible = "zmk,kscan-empty";
+        status = "okay";
+    };
 };
 
-/* Enable USB HID for dongle mode */
+/* Enable USB HID for dongle */
 &usbd {
     status = "okay";
 };
-
-/* Optional: If your dongle has an OLED, SPI device, or GPIO pin, define it here */
-/*
-&spi1 {
-    status = "okay";
-    cs-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
-};
-*/

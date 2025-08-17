@@ -20,12 +20,12 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: corne_left
+    shield: corne_xiao_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: seeeduino_xiao_ble
-    shield: corne_right
+    shield: corne_xiao_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: seeeduino_xiao_ble
-    shield: corne_dongle
+    shield: corne_xiao_dongle
   - board: seeeduino_xiao_ble
     shield: settings_reset
